@@ -30,4 +30,19 @@ local function getMembersInfo()
     end
 end
 
-getMembersInfo()
+-- 查找元素中是否存在 . 这个字符
+local function checkExist(strFileName)
+    --[[
+        lua中的特殊字符，需要使用 % 转义处理
+        ( ) . % + - * ? [ ^ $
+    --]]
+    local pos = string.find(strFileName, "%.")
+    if pos == nil then
+        print("does not exist prefix")
+    else
+        print("exist prefix")
+    end
+end
+
+checkExist("test.mp4")
+-- getMembersInfo()
