@@ -44,5 +44,18 @@ local function checkExist(strFileName)
     end
 end
 
+-- 格式化为标准的HTTP URL形式
+local function formatUrl()
+    --[[
+        转义字符， \\ 代表一个反斜线字符 \
+        \' 代表一个单引号字符
+        \" 代表一个双引号字符
+    --]] 
+    local strSrcUrl = "http:/\\/\\www.test.com/\\t=2"
+    local strRetValue = string.gsub(strSrcUrl, "/\\", "/")
+    print(strRetValue)
+end
+
+formatUrl()
 checkExist("test.mp4")
 -- getMembersInfo()
